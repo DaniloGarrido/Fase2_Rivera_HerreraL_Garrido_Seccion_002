@@ -1,0 +1,95 @@
+:root{--ancho :200px;
+  --alto :200px;
+
+}
+
+.tamanoimg
+{
+    width:var(--ancho);
+    height:var(--alto);
+    transition:width .9s;
+  
+}
+
+.tamanoimg:hover{
+    width:215px;
+    
+    transition:width .9s;
+    
+   
+}
+.divimg{background-color:white;
+    padding: 5px;
+   justify-content:center ;
+border: solid white;
+display:block;
+border-bottom: solid 1.5px rgba(102, 102, 102, 0.582);
+
+}
+ 
+.divcontainerimg{
+    padding: 25px;
+    background-color: rgba(180, 180, 180, 0.377);
+}
+body {margin:0;height:2000px;}
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+ transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  padding:9px;
+  transition: all 0.3s ease;
+  
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+  text-decoration: none;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.instagram{
+  background: #c13584;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+.footer {
+  padding: 25px;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+.tamaño{ width: minmax(100%,900px);
+  height: minmax(100%,400px);
+
+}
