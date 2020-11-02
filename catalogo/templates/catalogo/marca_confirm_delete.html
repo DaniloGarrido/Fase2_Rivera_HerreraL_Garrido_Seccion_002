@@ -1,0 +1,19 @@
+{% extends "plantilla_base.html" %}
+
+{% block content %}
+    <center>
+        <div class="container-fluid">
+            <h1 class="col-12" style="margin-top: 60px;">Bievenida</h1>
+
+                <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
+
+            <h2>Contenido Dinamico</h2>
+            <form action="" method="POST">
+                {%csrf_token%}
+                <input type="submit" action="" value="Eliminar" >
+            </form>
+            
+    
+        </div>
+    </center>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "plantilla_base.html" %}
+
+{% block content %}
+    <center>
+        <div class="container-fluid" style="margin-top: 60px;">
+            <h1 class="col-12">Bievenida</h1>
+
+                <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
+
+            <h2>Contenido Dinamico</h2>
+            {% if marca_list %}
+            <ul>
+        
+              {% for marca in marca_list %}
+              <li>
+                <a href="{{ marca.get_absolute_url }}">{{ marca.marca }}</a>
+              </li>
+              {% endfor %}
+        
+            </ul>
+        
+            {% else %}
+              <p>There are no books in the library.</p>
+            {% endif %}      
+            
+    
+        </div>
+    </center>
+{% endblock %}

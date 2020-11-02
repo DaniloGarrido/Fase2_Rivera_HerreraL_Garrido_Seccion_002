@@ -1,0 +1,18 @@
+{% extends "plantilla_base.html" %}
+
+{% block content %}
+    <center>
+        <div class="container-fluid">
+            <h1 class="col-12" style="margin-top: 60px;">Bievenida</h1>
+
+                <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
+
+            <h2>Contenido Dinamico</h2>
+            {%for marca in marca.marca_set.all %}
+            <a href="{%url 'marca-detail' marca.pk %}">{{marca}}</a>
+                
+            {% endfor %}
+
+        </div>
+    </center>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "plantilla_base.html" %}
+
+{% block content %}
+    <center>
+        <div class="container-fluid" style="margin-top: 60px;">
+            <h1 class="col-12">Bievenida</h1>
+
+                <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
+
+            <h2>Contenido Dinamico</h2>
+            {%for productos in productos.productos_set.all%}
+            <a href="{%url 'producto-detail' producto.pk %}">{{productos}}</a>
+            {% endfor %}
+
+        </div>
+    </center>
+{% endblock %}
