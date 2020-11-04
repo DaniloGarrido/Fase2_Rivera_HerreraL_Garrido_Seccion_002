@@ -2,22 +2,56 @@
 
 {% block content %}
     <center>
-        <div class="container-fluid" style="margin-top: 60px;">
-            <h1 class="col-12">Bievenida</h1>
+        <div class="container-fluid" style="margin-top: 65px;">
+          
 
                 <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
+            <div  style="background: white; padding: 10px;">
+                <h2>Ingresar un Nuevo Producto</h2>
+                <form class="container-fluid" action="" method="post"  >
+                    {%csrf_token%}
+                    <div class="container-fluid">
+                        {{form.id}}
+                        <div class="row" style="display:block" >
+                            <label class=" container-fluid " style=" padding: 5px;">Nombre:</label>
+                            {{form.nombre}}
+                        
+                        </div>
+                        <div class="row" style="display:block" >
+                            <label class=" container-fluid"  style=" padding: 5px;">Marca:</label>
+                            {{form.marca}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style="padding: 5px;">Modelo:</label>
+                        {{form.modelo}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style="padding: 5px;">Precio:</label>
+                        {{form.precio}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style="padding: 5px;">Color:</label>
+                        {{form.color}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style=" padding: 5px;">Peso:</label>
+                        {{form.peso}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style=" padding: 5px;">Alto:</label>
+                        {{form.alto}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style=" padding: 5px;">Ancho:</label>
+                        {{form.ancho}}
+                        </div>
+                        <div class="row" style="display:block;margin-top: 10px;" >
+                        <button class="btn btn-success" type="submit" value="">Agregar</button>
+                        </div>
+                    </div>
+                </form>
 
-            <h2>Contenido Dinamico</h2>
-            <form action="" method="post" >
-                {%csrf_token%}
-                <table >
-                    {{form.as_table}}
-                </table>
-                <input type="submit"value="enviar">
-
-            </form>
-
-    
+            </div>  
         </div>
     </center>
 {% endblock %}

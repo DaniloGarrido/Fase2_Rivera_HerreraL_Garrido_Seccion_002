@@ -3,16 +3,18 @@
 {% block content %}
     <center>
         <div class="container-fluid" style="margin-top: 60px;">
-            <h1 class="col-12">Bievenida</h1>
+            <h1 class="col-12">Administrador</h1>
 
-                <h3>Bienvenido usuario:</h3>
+                <h3>Bienvenido al sitio administrador de My HW Factory</h3>
 
-            <h2>Contenido Dinamico</h2>
 
-                <p>Cantidad</p>
+
+                <p>Click en la opción que deseas realizar:</p>
                 <ul>
-                   
-                    
+                    <button class="btn btn-primary"><a href="{% url 'producto_create'%}" style="text-decoration: none;color: white;">Agregar Productos</a> </button>
+
+                    <button class="btn btn-primary"><a href="{% url 'marca_create'%}" style="text-decoration: none;color: white;">Agregar Marcas</a> </button>
+
                 </ul>
         </div>
     </center>

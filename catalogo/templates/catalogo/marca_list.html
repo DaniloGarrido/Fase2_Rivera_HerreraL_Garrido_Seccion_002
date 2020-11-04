@@ -2,22 +2,42 @@
 
 {% block content %}
     <center>
-        <div class="container-fluid" style="margin-top: 60px;">
+        <div class="container-fluid" style="margin-top: 60px;background-color: white;">
             <h1 class="col-12">Bievenida</h1>
 
                 <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
-
+                <button class="btn btn-primary"><a href="{% url 'marca_create'%}" style="text-decoration: none;color: white;">Agregar Marcas</a> </button>
             <h2>Contenido Dinamico</h2>
+            
+
             {% if marca_list %}
-            <ul>
+            
         
-              {% for marca in marca_list %}
-              <li>
-                <a href="{{ marca.get_absolute_url }}">{{ marca.marca }}</a>
-              </li>
-              {% endfor %}
+            
+              <table class="table table-bordered">
+                <thead style="background-color:rgb(0, 110, 255);color: white;">
+                  <tr>
+                    <th scope="col"># Id</th>
+                    <th scope="col">Nombre</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for marca in marca_list%}
+                  
+                  <tr>
+                    <th scope="row"><a href="{{ marca.get_absolute_url }}">{{ marca.id}}</a></th>
+                    <td><a href="{{ marca.get_absolute_url }}">{{ marca.marca}}</a></td>
+                   
+                  </tr>
+                  {% endfor %}
+                  
+                   
+                </tbody>
+              </table>
+            
         
-            </ul>
+            
         
             {% else %}
               <p>There are no books in the library.</p>

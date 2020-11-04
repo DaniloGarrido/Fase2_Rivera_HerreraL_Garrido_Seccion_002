@@ -21,7 +21,7 @@ class ProductoCreate(CreateView):
 
 class ProductoUpdate(UpdateView):
     model=Producto
-    fields=['Nombre']
+    fields=['nombre','marca','modelo','precio','color','peso','alto','ancho']
     
 class ProductoDelete(DeleteView):
     model=Producto

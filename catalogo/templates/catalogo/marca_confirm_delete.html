@@ -7,10 +7,14 @@
 
                 <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
 
-            <h2>Contenido Dinamico</h2>
+                <h2>Estas apunto de borrar esta marca: {% if marca%} {{marca.marca}}{% endif%}!!</h2>
+                <h4>Estas segur@ que deseas borrarlo?</h4>
             <form action="" method="POST">
                 {%csrf_token%}
-                <input type="submit" action="" value="Eliminar" >
+                
+
+                <button  class="btn btn-danger" type="submit" action="" value="Borrar" >Borrar</button>
+                <a href="{% url 'marca-detail' marca.pk %}"class="btn btn-primary btn-xl">Atras</a>
             </form>
             
     

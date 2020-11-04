@@ -3,27 +3,52 @@
 {% block content %}
     <center>
         <div class="container-fluid" style="margin-top: 60px;">
-            <h1 class="col-12">Bievenida</h1>
+          <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
+          <div style="background: white; padding: 10px;">
+            <h1 class="col-12">Gestion Productos</h1>
 
-                <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
-
-            <h2>Contenido Dinamico</h2>
-            {% if producto_list %}
-            <ul>
-        
-              {% for producto in producto_list %}
-              <li>
                 
-                <a href="{{ producto.get_absolute_url }}">{{ producto.nombre}} {{producto.color}} {{producto.modelo}} {{producto.precio}}</a>
-              </li>
-              {% endfor %}
+            
+                <button class="btn btn-primary"><a href="{% url 'producto_create'%}" style="text-decoration: none;color: white;">Agregar Productos</a> </button>
+                
+            
+            {% if producto_list %}
+           
+            <h2>Productos Registrados</h2>
+              
+              <table class="table table-bordered">
+                <thead style="background-color:rgb(0, 110, 255);color: white;">
+                  <tr>
+                    <th scope="col"># Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Precio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for producto in producto_list%}
+                  
+                  <tr>
+                    <th scope="row"><a href="{{ producto.get_absolute_url }}">{{ producto.id}}</a></th>
+                    <td><a href="{{ producto.get_absolute_url }}">{{ producto.nombre}}</a></td>
+                    <td><a href="{{ producto.get_absolute_url }}">{{ producto.marca.marca}}</a></td>
+                    <td><a href="{{ producto.get_absolute_url }}">{{ producto.modelo}}</a></td>
+                    <td><a href="{{ producto.get_absolute_url }}">${{ producto.precio}}</a></td>
+                  </tr>
+                  {% endfor %}
+                  
+                   
+                </tbody>
+              </table>
+             
+             
         
-            </ul>
-        
+           
             {% else %}
             {% endif %}      
             
-    
+          </div>
         </div>
     </center>
 {% endblock %}

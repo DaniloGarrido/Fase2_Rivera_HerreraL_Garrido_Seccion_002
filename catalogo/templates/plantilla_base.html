@@ -37,11 +37,12 @@
                 <a class="nav-link fontnav" href="{% url 'index' %}">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fontnav" href="" target=blank_>Produtos</a>
+                <a class="nav-link fontnav" href="{% url 'producto' %}" target=blank_>Produtos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fontnav" href="" >Marcas</a>
-              </li>    
+                <a class="nav-link fontnav" href="{% url 'marca' %}" >Marcas</a>
+              </li>   
+              
             </ul>
             <label type="button" class="btnligthmode nav-item" id="btndarkmode"  >
               <i class="fas fa-adjust btniconcolor"></i>                      

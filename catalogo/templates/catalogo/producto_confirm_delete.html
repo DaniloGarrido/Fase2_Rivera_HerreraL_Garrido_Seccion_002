@@ -10,9 +10,12 @@
             <h2>Contenido Dinamico</h2>
             <form action="" method="POST">
                 {%csrf_token%}
-                <input type="submit" action="" value="Delete" >
+                <h2>Estas apunto de borrar este producto: {% if producto%} {{producto.nombre}}{% endif%}!!</h2>
+                <h4>Estas segur@ que deseas borrarlo?</h4>
+                <button  class="btn btn-danger" type="submit" action="" value="Borrar" >Borrar</button>
+                <a href="{% url 'producto-detail' producto.pk %}"class="btn btn-primary btn-xl">Atras</a>
             </form>
-            {% endblock %}
+            
     
         </div>
     </center>
