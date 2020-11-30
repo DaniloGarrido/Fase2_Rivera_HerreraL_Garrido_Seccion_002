@@ -1,0 +1,58 @@
+{% extends "plantilla_base.html" %}
+
+{% block content %}
+    <center>
+        <div class="container-fluid" style="margin-top: 65px;">
+          
+
+                <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
+            <div  style="background: white; padding: 10px;">
+                <h2>Comprar</h2>
+                <form class="container-fluid" action="" method="POST" enctype="multipart/form-data"  >
+                    {%csrf_token%}
+                    <div class="container-fluid">
+                
+                      {{form.producto}}
+                      
+                        {{form.id}}
+                        <div class="row" style="display:block" >
+                            <label class=" container-fluid " style=" padding: 5px;">Nombre:</label>
+                            {{form.nombre}}
+                        
+                        </div>
+                        <div class="row" style="display:block" >
+                            <label class=" container-fluid"  style=" padding: 5px;">RUN:</label>
+                            {{form.run}}                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style="padding: 5px;">Cantidad:</label>
+                        {{form.cantidad}}
+                        
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style="padding: 5px;">Telefono:</label>
+                        {{form.telefono}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style="padding: 5px;">Correo:</label>
+                        {{form.correo}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style=" padding: 5px;">Imagen:</label>
+                        {{form.img1}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style=" padding: 5px;">Tipo:</label>
+                        {{form.tipo}}
+                        </div>
+                        
+            
+                        <div class="row" style="display:block;margin-top: 10px;" >
+                        <button class="btn btn-success" type="submit" value="">Pagar</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>  
+        </div>
+    </center>
+{% endblock %}

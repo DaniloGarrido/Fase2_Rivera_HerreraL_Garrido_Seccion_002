@@ -1,0 +1,39 @@
+{% extends "plantilla_base.html" %}
+
+{% block content %}
+    <center>
+        <div class="container-fluid" style="margin-top: 60px;">
+            
+
+                <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
+
+            
+            {% if compra %}
+              <h2>Detalles Compra: {{compra.nombre}}</h2>
+              <div>
+                {% if compra.cantidad%}
+                <label for="">Cantidad: </label> {{compra.cantidad}}
+                {% endif %}
+              </div>
+              <div>
+                {% if compra.tipo == "d"%}
+                <label for="">Recargo Personalizado: $</label>30000
+                {% else%}
+                <label for="">Recargo: $</label>0
+                {% endif %}
+              </div>
+              <div>
+                {% if compra.producto.pk %}
+                <label for="">Precio: $</label>{{compra.producto.precio}}
+                {% endif %}
+              </div>
+              <div>
+                {% if compra.producto.pk %}
+                <label for="">Precio Total: $</label>{{compra.producto.precio}}
+                {% endif %}
+              </div>
+              
+            {% endif %}
+        </div>
+    </center>
+{% endblock %}

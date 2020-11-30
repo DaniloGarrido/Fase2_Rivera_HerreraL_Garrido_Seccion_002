@@ -1,8 +1,9 @@
 {% extends "plantilla_base.html" %}
-
+{% load static%}
 {% block content %}
     <center>
         <div class="container-fluid" style="margin-top: 60px;">
+          {% if user.is_authenticated  %}
           <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
           <div style="background: white; padding: 10px;">
             <h1 class="col-12">Gestion Productos</h1>
@@ -32,7 +33,7 @@
                   <tr>
                     <th scope="row"><a href="{{ producto.get_absolute_url }}">{{ producto.id}}</a></th>
                     <td><a href="{{ producto.get_absolute_url }}">{{ producto.nombre}}</a></td>
-                    <td><a href="{{ producto.get_absolute_url }}">{{ producto.marca.marca}}</a></td>
+                    <td><a href="{{ producto.get_absolute_url }}">{{ producto.marca}}</a></td>
                     <td><a href="{{ producto.get_absolute_url }}">{{ producto.modelo}}</a></td>
                     <td><a href="{{ producto.get_absolute_url }}">${{ producto.precio}}</a></td>
                   </tr>
@@ -49,6 +50,33 @@
             {% endif %}      
             
           </div>
+          {%else%}
+          <p> Usted no se encuentra Logeado y no puede acceder a esta opcion</p>
+          <a href="{% url 'login' %}">Iniciar Sesion</a>
+
+            {% if producto_list %}
+            <h2>Productos Registrados</h2>
+              {% for producto in producto_list%}
+              
+              <div class="productos-items  col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 ;">
+                <div class="card">
+                  {% if producto.img1 %}
+                  <img class="card-img-top" src="{{ producto.img1.url}}" >
+                  {% endif%}
+                  <div class="card-body">
+                    <h5 class="card-title text-uppercase">{{ producto.nombre}}</h5>
+                    <h5 class="card-title text-uppercase">${{ producto.precio}}</h5>
+                    <a href="{% url 'producto-detail' producto.pk %}"
+                             class="btn btn-primary" style="float: right;">
+                              Ver más
+                          </a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+           
+            {% endif %}
+          {% endif %}
         </div>
     </center>
 {% endblock %}

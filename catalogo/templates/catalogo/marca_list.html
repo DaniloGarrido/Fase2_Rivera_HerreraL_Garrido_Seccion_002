@@ -19,6 +19,7 @@
                   <tr>
                     <th scope="col"># Id</th>
                     <th scope="col">Nombre</th>
+                    <th scope="col">Disponibilidad</th>
                     
                   </tr>
                 </thead>
@@ -28,6 +29,7 @@
                   <tr>
                     <th scope="row"><a href="{{ marca.get_absolute_url }}">{{ marca.id}}</a></th>
                     <td><a href="{{ marca.get_absolute_url }}">{{ marca.marca}}</a></td>
+                    <td><a href="{{ marca.get_absolute_url }}">{{ marca.disponible}}</a></td>
                    
                   </tr>
                   {% endfor %}

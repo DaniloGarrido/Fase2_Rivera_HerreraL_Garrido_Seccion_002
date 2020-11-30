@@ -1,0 +1,38 @@
+{% extends 'plantilla_base.html' %}
+
+
+{% block content %}
+
+{% load static %}
+<link href="{% static 'css/styleslog.css' %}" rel="stylesheet">
+
+<div class="masthead container d-flex align-items-center flex-column" style="margin-top: 100px;">
+<div class="login-page">
+ 
+<form method="POST" action="{% url 'login' %}">
+{% csrf_token %}
+
+<div style="display: flex;flex-direction: column;background-color: white;padding: 10px;" >
+   
+  <label class="label"> Usuario: </label>
+  {{ form.username }}
+  <p></p>
+  <label class="label"> Contraseña: </label>
+  {{ form.password }}
+
+{% if form.errors %}
+<p style="color: red; font-size: 10px;">Usuario y/o contraseña incorrecto. Inténtalo de nuevo.</p>
+{% endif %}
+<p><a href="{% url 'password_reset' %}">Olvidaste tu contrasena?</a></p>
+<div>
+  <button class="btn btn-primary btn-xl" type="submit" value="login" > Ingresar </button>
+  <input type="hidden" name="next" value="{{ next }}" />
+</div>
+</div>
+
+</form>
+  
+</div>
+</div>
+
+{% endblock %}

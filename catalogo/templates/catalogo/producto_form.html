@@ -8,7 +8,7 @@
                 <p>Bievenido a <em>My HW Factory</em>, En Django!</p>
             <div  style="background: white; padding: 10px;">
                 <h2>Ingresar un Nuevo Producto</h2>
-                <form class="container-fluid" action="" method="post"  >
+                <form class="container-fluid" action="" method="POST" enctype="multipart/form-data"  >
                     {%csrf_token%}
                     <div class="container-fluid">
                         {{form.id}}
@@ -20,10 +20,12 @@
                         <div class="row" style="display:block" >
                             <label class=" container-fluid"  style=" padding: 5px;">Marca:</label>
                             {{form.marca}}
+                            <a class="btn btn-primary" href="{%url 'marca_create'%}" style="font-size: xx-small;"> Agregar Marca</a>
                         </div>
                         <div class="row" style="display:block" >
                         <label class=" container-fluid"  style="padding: 5px;">Modelo:</label>
                         {{form.modelo}}
+                        
                         </div>
                         <div class="row" style="display:block" >
                         <label class=" container-fluid"  style="padding: 5px;">Precio:</label>
@@ -44,6 +46,22 @@
                         <div class="row" style="display:block" >
                         <label class=" container-fluid"  style=" padding: 5px;">Ancho:</label>
                         {{form.ancho}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style=" padding: 5px;">Imagen 1:</label>
+                        {{form.img1}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style=" padding: 5px;">Imagen 2:</label>
+                        {{form.img2}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style=" padding: 5px;">Imagen 3:</label>
+                        {{form.img3}}
+                        </div>
+                        <div class="row" style="display:block" >
+                        <label class=" container-fluid"  style=" padding: 5px;">Imagen 4:</label>
+                        {{form.img4}}
                         </div>
                         <div class="row" style="display:block;margin-top: 10px;" >
                         <button class="btn btn-success" type="submit" value="">Agregar</button>
